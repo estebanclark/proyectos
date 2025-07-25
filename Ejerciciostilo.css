@@ -1,0 +1,39 @@
+body{
+    background-color: orange;
+}
+
+#tarjeta{
+    width: 550px;
+    background-color: yellow;
+    margin: auto;
+}
+
+.Contenido_tarjeta{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform:uppercase;
+    color: gray;
+}
+
+#Parrafo{
+    text-transform: lowercase;
+    margin-top: 50px;
+    text-align: justify;
+    padding: 25px;
+    background-color:burlywood;
+    color: white;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#Nombre{
+    margin: 0;
+    padding-top: 10px;
+
+}
+
+#proximo_programador{
+    text-decoration: overline;
+    padding: 5;
+    text-transform: none;
+    font-style: italic;
+    font-size: 25px;
+}

@@ -1,0 +1,551 @@
+@font-face {
+    font-family: "Fontring";
+    src: url("../../fontring/Mantinia-Regular.ttf") format("truetype");
+}
+/**Los @ como el font face siembre deben de ir primero en un css**/
+
+
+
+/**1 estilos generales**/
+
+body{
+    margin: 0;
+    height: 100%;
+    padding: 0;
+}
+
+main{
+    display: grid;
+    text-align: center;
+    background:linear-gradient(to bottom, #004, transparent);
+    width: 25em;
+    height: 11em;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column: 2/4;
+    grid-row: 2;
+    box-sizing: border-box;
+}
+
+footer{
+    height: 8em;
+    width: 70%;
+    font-size: 30px;
+    grid-row: 5/9;
+    grid-column: 2 / -1;
+}
+
+p{
+    background: linear-gradient(to right, #0006, transparent);
+    color: #fff;
+    width: 17em;
+    font-size: 0.7em;
+    font-family: Fontring;
+    border-radius: 10px;
+    text-shadow: 1px 1px #000;
+    backdrop-filter: blur(2px);
+    box-sizing: border-box;
+}
+
+hr{
+    height: 1px;
+    box-sizing: border-box;
+}
+
+a{
+    color: #aaa;
+    font-size: 1rem;
+    font-family: Fontring;
+    font-weight: bolder;
+    font-style: italic;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px #000;
+}
+
+/**1 estilos generales**/
+
+/**2.-Layout principal**/
+
+#Content-main{
+    display: grid;
+    grid-template-columns: repeat(8, 200px);
+    grid-template-rows: repeat(9, 100px);
+    grid-auto-flow: row;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../../Imagenes/imagenes-jefes-individuales/imagenfondo.jpg");
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+}
+
+/**Slide bar left**/
+#navegation-opcions{
+    position: fixed;
+    text-align: center;
+    background: linear-gradient(to bottom, #001, transparent);
+    font-size: 15px;
+    width: 6em;
+    padding: 5px;
+    margin: 2em 0 0 0.8em;
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/**2.-Layout principal**/
+
+
+/**3.-Estilos especificos elementos y clases**/
+.Img-slide-left{
+    width: 4.5em;
+    height: 4.5em;
+    margin-top: 1em;
+    border: 5px #042a3d solid;
+    border-radius: 100%;
+    transition: 0.2s ease;
+}
+
+.Img-slide-left:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 0 10px 0 #fff;
+}
+
+.Title-slideBar{
+    background: radial-gradient(ellipse, #00004f, transparent );
+    font-size: 1em;
+    font-weight: bolder;
+    font-family: Fontring;
+    font-style: italic;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.4s ease;
+}
+
+.Title-slideBar:hover{
+    background: radial-gradient(circle at top, #1A4DBE, #0A2D8F, #051B5E);
+    font-size: 1.1em;
+    font-style: italic;
+    font-weight: bolder;
+    text-decoration: underline;
+    text-shadow: 1px 1px #000;
+    border-radius: 5px;
+}
+
+#recomend-weapont{
+    grid-row: 2;
+    width: 9em;
+}
+
+#margit-img-history{
+    border: 5px solid #000;
+    border-radius: 100%;
+    box-shadow: 0 0 10px 0 #000;
+    grid-column: 2/3; 
+    margin-left: 2em;
+    width: 9em;
+    height: 7em;
+}
+
+#night-grandswort{
+    color: #fff;
+    font-weight: bolder;
+    font-family: Fontring;
+    font-style: italic;
+    text-decoration: underline;
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: -0.1em;
+    margin-left: 1em;
+}
+
+#dat-about-margin{
+    width: 18em;
+    height: 14em;
+    text-align: center;
+    font-size: 17px;
+    grid-column: 5/6;
+    grid-row: 2;
+}
+
+
+#margit-caracts{
+    border-radius: 10px;
+    width: 12em;
+    height: 8em;
+}
+
+#list-debuffs-OFmargitt{
+    background:linear-gradient(to bottom, #00004f, #0004);
+    font-family: Fontring;
+    font-style: italic;
+    font-weight: bolder;
+    text-decoration: underline;
+    text-shadow: 2px 2px #000;
+    padding: 5px;
+    color: #fff;
+    border: 3px #000;
+    border-style: groove;
+    border-radius: 6px;
+}
+
+#tittle-debuffs{
+    margin: 0;
+    height: 1.3em;
+    padding: 0;
+}
+
+#where-you-can-find-he{
+    display: flex;
+    background:radial-gradient(circle at left, #0001, transparent);
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+#localitation{
+    width: 35em;
+    height: 8em;
+    padding: 5px;
+    font-size: 18px;
+    filter: brightness(0.1);
+    transition: 2s ease;
+}
+
+#castle{
+    width: 18em;
+    border-left: #000 solid 6px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+}
+
+#where-you-can-find-he:hover #localitation{/**se pueden aplicar estilos un hover a un elemento especifico en un contenedor, solo es seleccionando primero el contenedor y despues del hover escribir el selector del elemento y el nombre de este de esta manera el hover se activara independientemente de en que parte del contenedor se oprima**/
+    filter: brightness(1);
+    transform: translateY(-12px);
+    box-shadow: 0 0 20px 0 #eee;
+    text-shadow: 2px 2px #000;
+    backdrop-filter: blur(10px);
+} 
+
+#form-margit{
+    background: linear-gradient(to bottom, #000, transparent);
+    width: 6em;
+    height: 6em ;
+    margin: 4em 0 0 12em;
+    padding: 5px;
+    border-top: 4px solid #000;
+    border-radius: 5px;
+    filter: brightness(0%);
+    transition: 0.9s ease;
+    transform-style: preserve-3d;
+    grid-column: 6/7;
+    box-sizing: border-box;
+}
+
+#form-margit:hover{
+    text-decoration: underline;
+    filter: none;
+    backdrop-filter:  blur(10px);
+    transform: translateY(-9px);
+    box-shadow: 0 0 10px 0 #000;
+    background:linear-gradient(to bottom, #00004f91, transparent);;
+}
+
+/**3.-Estilos especificos elementos y clases**/
+
+/**4.-Medias queris**/
+
+
+/**Slide bar left**/
+
+/**los media queris sirven para adaptar un diseño a diferentes dispositivos mediante ya sea el max width o min witdh**/
+/**sin embargo primero hay que tener en cuenta las escalas o pixeles del dispositivo para hacer la medicion, por ejemplo en este caso es para moviles**/
+
+
+/**Telefonos en este caso se debe de usar el min**/
+/**esta media queris al coincidir exactamente con el width y height del iphone SE solo se activara en este y no afectara a otros dispositivos que no tengan un ancho y un alto mayor o igual en el caso del min y en el caso del height solo si es menor o igual**/
+@media (max-width: 430px) and (max-height: 932px) {
+    body{
+        height: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    main, #navegation-opcions, p, #margit-img-history {
+        max-width: 100%;
+    }
+
+    #Content-main {
+        overflow: hidden;
+        height: 100vh; /**Se modifica las dimenciones para que en moviles se adapte**/
+        width: 100vw; 
+        background-image: url("../../../Imagenes/imagenes-jefes-individuales/imagenfondo.jpg");
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #navegation-opcions{
+        width: 5em;
+        margin: 3em 0 0 0.4em;
+    }
+
+    .Img-slide-left{
+        width: 3em;
+        height: 3em;
+    }
+
+    .Title-slideBar{
+        font-size: 0.8em;
+    }
+
+    main{
+        display: flex;
+        flex-direction: column;
+        width: 9em;
+        margin: 1em 0 0 3em;
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    p{
+        background: linear-gradient(to right, #0006, transparent);
+        color: #fff;
+        width: 17em;
+        font-size: 10px;
+        font-family: Fontring;
+        border-radius: 10px;
+        text-shadow: 1px 1px #000;
+        backdrop-filter: blur(2px);
+        box-sizing: border-box;
+    }
+
+    #margit-img-history{
+        width: 50px;
+        height: 50px;
+    }
+
+    #night-grandswort{
+        position: relative;
+        font-size: 0.5em;
+    }
+
+    #recomend-weapont{
+        width: 7em;
+    }
+
+    #dat-about-margin{
+        grid-column: 2;
+        grid-row: 3;
+        margin: 4em 0 0 3em;
+        font-size: 12px;
+        width: 18em;
+        height: 10em;
+    }
+
+    #where-you-can-find-he{
+        display: flex;
+        flex-direction:column-reverse;
+        margin: 1em 0 0em 2em;
+        text-align: center;
+        grid-row: 5;
+        grid-column: 2;
+    }
+
+    #localitation{
+        font-size: 10px;
+        width: 23em;
+        height: 5em;
+        filter: none;
+
+    }
+
+    #castle{
+        width: 8em;
+        height: 3em;
+    }
+
+    #form-margit{
+        display: none; /**display none sirve para hacer desaparecer un elemento sin necesitad de borrarlo en el html**/
+    }
+
+}
+
+/**para adaptar un diseño cuando ya sea un telefono o tablet esta en vertical se usa orientation landscape**/
+@media (max-width:950px) and (orientation: landscape){/**telefonos en horizontal**/
+    * {
+        box-sizing: border-box;
+    }      
+
+    body {
+        overflow: hidden;
+        margin: 0;
+        height: 100dvh;
+        width: 100vw;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+
+    #Content-main{
+        display: grid;
+        width: 100vw;
+        height: 100dvh;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+        grid-auto-flow: row;
+    }
+
+    /**nav**/
+
+    #navegation-opcions{
+        width: 3.3rem;
+        height: 20rem;
+        line-height: 0.3rem;
+        grid-column: 1;
+        grid-row: 1/2;
+    }
+
+    .Title-slideBar{
+        font-size: 0.5rem;
+    }
+
+    .Img-slide-left{
+        width: 3rem;
+        height: 3rem;
+        box-sizing: border-box;
+    }
+
+    hr{
+        display: none;
+    }
+
+    /**nav**/
+
+    /**Main content**/
+    main{
+        width: 16rem;
+        height: 5rem;
+        margin-left: 2rem;
+        grid-column: 3/4;
+        grid-row: 4/3;
+        grid-auto-flow: row;
+    }
+
+    p{
+        font-size: 0.4rem;
+        width: 8rem;
+    }
+
+    #recomend-weapont{
+        font-size: 0.6rem;
+    }
+
+    #night-grandswort{
+        font-size: 0.6rem;
+    }
+
+    #margit-img-history{
+        width: 4rem;
+        height: 4rem;
+    }
+
+    /**main content**/
+
+    
+    /**dat-about-margin**/
+
+    #dat-about-margin{
+        width: 9rem;
+        height: 3rem;
+        margin-left: 2rem;
+        grid-column: 4;
+        grid-row: 2/3;
+    }
+
+    #margit-caracts{
+        width: 5rem;
+        height: 3rem;
+    }
+
+    #tittle-debuffs{
+        font-size: 0.6rem;
+    }
+
+    #list-debuffs-OFmargitt{
+        font-size: 0.5rem;
+    }
+    /**dat-about-margin**/
+
+    /**footer section**/
+
+    #where-you-can-find-he{
+        width: 26rem;
+        height: auto;
+        margin-top: 0.4rem;
+        margin-left: 2rem;
+        grid-column: 3/5;
+        grid-row: 5/6;
+    }
+
+    #localitation{
+        width: 1rem;
+    }
+    
+
+    #localitation{
+        width: 18rem;
+        font-size: 0.7rem;
+    }
+
+    #castle{
+        width: 6rem;
+        height: 7rem;
+    }
+
+    #form-margit{
+        color: #fff;
+        background: linear-gradient(to bottom, #00004f, transparent);
+        width: 4rem;
+        height: 4em ;
+        padding: 5px;
+        border-top: 4px solid #000;
+        border-radius: 5px;
+        transition: 0.9s ease;
+        transform-style: preserve-3d;
+        line-height: 0.6em;
+        box-sizing: border-box;
+        grid-column: 4/5;
+        grid-row: 5;
+    }
+
+    #form-margit:hover, #form-margit:active{filter: brightness(100px);
+    }
+
+    a{
+        font-size: 0.7rem;
+        font-family: Fontring;
+        font-weight: bolder;
+        font-style: italic;
+        text-align: center;
+        text-decoration: none;
+        text-shadow: 1px 1px #000;
+    }
+
+    /**footer section**/
+}
+/**4.-Medias queris**/
+/**configuracion de telefonos**/
+/**todas las configuraciones de un dispositivo en especifico se escribe en un unico media queris y asi con otros dispositivos**/
+/**Vh hace que el elemento ocupe todo el alto de la pantalla y VW hace ocupe todo el ancho de la pantalla**/
+
+/**los media queris siempre van al final para que funcionen ya que para que el css funcione correctamente este debe de tener un orden
+y es el siguiente
+
+1-.Estilos generales
+2.-layout principal
+3.-estilos especificos de elementos y clases
+4.-media queris al final**/

@@ -1,0 +1,642 @@
+@font-face {
+    font-family: "Elden";
+    src: url("../../EB_Garamond/EBGaramond-VariableFont_wght.ttf") format("truetype");
+    font-weight: 400;
+    font-display: swap; /**Mejora el rendiento de la pagina ya que carga una fuente predeterminada si tarda mucho en cargar la fuente original**/
+}
+
+
+/**Propiedades generales**/
+body{
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    font-family: Elden;
+    color: #ddaa00;
+}
+
+header{
+    background: linear-gradient(to bottom, #999, transparent );;
+    display: flex;
+    flex-direction: row;
+    height: 5rem;
+    padding: 5px;
+    font-weight: bolder;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px #000;
+    letter-spacing: 5px;
+    grid-column: 1/10;
+    grid-row: 1/1;
+}
+
+/**los keyframes es un elemento que permite crear animaciones personalizadas donde se compone del nombre de la animación,  del %(tiempo de cada animación)
+propiedades (dentro del %)**/
+@keyframes brillo {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}/**dentro de los keyframes se pueden escribir casi cualquier propiedad a exepción de las que no tendrian sentido como display, float, etc. ademas el % se puede sustituir por 0(desactivado o 1(activdado)**/
+
+header {
+    animation: brillo 1s ease-in-out;
+}
+/**Para usar la animación creada se coloca usa la propiedad animation y se escribe el nombre establecido del keyframe**/
+/**animation cuenta con 1/nombre de la animación 2/duración de la animación 3/retraso 4/iteraciones es decir cuantas veces se repite 5/dirección normal reverse y alternate**/
+
+
+/**la pseudo clase has activa las propiedades de un contenedor padre en caso de contar con los elementos escritos en el ()**/
+main:has(div){
+    display: grid;
+    grid-template-columns: repeat(13, 100px);
+    grid-template-rows: repeat(4, 1fr);
+    grid-auto-flow: row;
+    height: auto;
+    width: auto;
+    padding: 10px 0 0 1em;
+    font-size: 16px;
+    grid-row: 2/7;
+    grid-column: 1/10;
+}
+
+/**> Selecciona directamente a un hijo del Main en este caso el primero  **/
+main > div:first-child{
+    background-color: transparent;
+    height: 10em;
+    backdrop-filter:blur(5px);
+    grid-column: 1/5;
+    grid-row: 1/2;
+}
+/**first-child indica que ese div es el primer hijo del contenedor padre sin embargo esto solo aplica si es un div**/
+main > div:nth-child(2){
+    display: flex;
+    flex-direction:row;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    text-shadow: 1px 1px #000;
+    font-size: 0.8em;
+    grid-column: 1/5;
+    grid-row: 3/4;
+}
+
+/**Seleccionando main, se utiliza el selector de hijos directos >div despues se especifica cual div se escoge con nth-child y por ultimo se elige el grupo de etiquetas que se seleccionara en este caso los img **/
+
+main > div:nth-child(2) img{
+    width: 7.5rem;
+    height: 4.5rem;
+    margin-right: 0.4rem;
+    border: 0px solid transparent;
+    border-radius: 15px;
+    box-shadow: 0 0 5px 0 #000;
+    box-sizing: border-box;
+}
+
+main > div:nth-child(2) li{
+list-style:none;} /**cambia el estilo de los puntos que tienen los elementos li**/
+
+main > div:nth-child(3){
+    
+    padding-top: 2rem;
+    grid-column: 6/9;
+    grid-row: 1/4;
+    border: 5px none solid;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px 0 #000;
+    backdrop-filter: blur(2px);
+}
+
+main > div:nth-child(4){
+    background:linear-gradient(to left, #333, transparent);
+    grid-column: 10/14;
+    grid-row: 3/4;
+    height: 10rem;
+
+}
+
+main > div:last-child{
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    padding: 4px;
+    font-size: 1.2rem;
+    text-align: justify;
+    grid-column: 10/14;
+    grid-row: 1/2;
+    text-shadow: 1px 1px #000;
+}
+
+main > div{
+    border: transparent solid 5px;
+    border-radius: 10px;
+}
+
+header h1,/**Se pueden selecionar varios elementos html de esta manera seleccionando primero el contenedor padre y despues el elemento ques se quiere modificar**/
+header h2,
+header #Img-banner{
+    margin-right: 1em;
+}
+
+header > h2 >span{
+    text-decoration:line-through;
+}
+
+/**Where selecciona uno o varios elementos para aplicarles estilos sin afectar su especificidad**/
+/**la especifica indica el nivel de importancia de un elemento haciendo que se apliquen o no los elementos ya que estos se sustituiran en forma de cascada de arriba pa abajo**/
+#Section-one, header:where(h1, h2) {
+    font-size: 15px;
+}
+
+nav{
+    margin:0 0 0 20rem ;
+    height: auto;
+    width: 50vw;
+    padding: 7px;
+    text-align: center;
+    backdrop-filter: blur(3px);
+}
+
+/**where verifica que tanto dentro de main como nav se encuentre un primer hijo, aplicando los estilos declarados**/
+@keyframes levantar-firstchild {
+    0%{
+        background-color: none;
+    }
+    10%{
+        background: linear-gradient(to left, #22aa00, transparent);
+        margin-right: 1rem;
+        border-radius: 10px;
+    }
+    20%{
+        background: linear-gradient(to left, #55aa00, transparent);
+        margin-right: 1rem;
+        border-radius: 20px;
+    }
+    30%{
+        background: linear-gradient(to left, #77aa00, transparent);
+        margin-right: 1rem;
+        border-radius: 30px;
+    }
+    40%{
+        background: linear-gradient(to left, #99aa00, transparent);
+        margin-right: 1rem;
+        border-radius: 40px;
+    }
+    70%{
+        background: linear-gradient(to left, #aaaa00, #ddaa00);
+        margin-right: 1rem;
+        border-radius: 40px;
+    }
+    85%{
+        background: linear-gradient(to left, #bbaa00, #ddaa00);
+        margin-right: 1rem;
+        border-radius: 45px;
+    }
+    100%{
+        background-color: #ddaa00;
+        margin-right: 1rem;
+        border-radius: 50px;
+    }
+    
+}
+
+nav:first-child:hover{
+    color: #000;
+    animation: levantar-firstchild 5s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes levantar-secondchild {
+    0%{
+        background-color: none;
+    }
+    10%{
+        background: linear-gradient(to right, #22aa00, transparent);
+        margin-right: 1rem;
+        border-radius: 10px;
+    }
+    20%{
+        background: linear-gradient(to right, #55aa00, transparent);
+        margin-right: 1rem;
+        border-radius: 20px;
+    }
+    30%{
+        background: linear-gradient(to right, #77aa00, transparent);
+        margin-right: 1rem;
+        border-radius: 30px;
+    }
+    40%{
+        background: linear-gradient(to right, #99aa00, transparent);
+        margin-right: 1rem;
+        border-radius: 40px;
+    }
+    70%{
+        background: linear-gradient(to right, #aaaa00, #ddaa00);
+        margin-right: 1rem;
+        border-radius: 40px;
+    }
+    85%{
+        background: linear-gradient(to right, #bbaa00, #ddaa00);
+        margin-right: 1rem;
+        border-radius: 45px;
+    }
+    100%{
+    background-color: #ddaa00;
+        margin-right: 1rem;
+        border-radius: 50px;
+    }
+    
+}
+
+nav:last-child:hover{
+    color: #000;
+    animation: levantar-secondchild 5s ease;
+    animation-fill-mode: forwards;/**Esta propiedad evita que la animación keyframe vuelva a su estado original**/
+}
+
+a{
+    color: #ddaa00;
+    font-size: 22px;
+    margin-left: 2rem;
+    /**Inherit hereda la propiedad dada del padre mas cercano en este caso el unico padre con color es body por lo tanto lo hereda de este**/
+}
+/**Selector descendiente: selecciona todos los elementos a dentro del nav sin importar si los a son hijos de otro elemento dentro del mismo nav**/
+
+
+section{
+    display: flex;
+    flex-direction:column;
+    text-align: center;
+    text-shadow: 1px 1px #000;
+    padding: 5px;
+    grid-column: 1/7;
+    grid-row: 1/6;
+}
+
+/**where selecciona section o incluso puede seleccionar otro para que se cumpla la condicion de que >dentro de section hay un ol> y por ultimo este selecciona los hijos o nietos li del ol en si where aplica las propiedades si se cumple la condición **/
+:where(section) > ol > li {
+    padding: 5px;
+    font-size: 1.1em;
+    border-left: 3px solid #000;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-bottom: 0.5rem;
+    backdrop-filter: blur(5px);
+}
+/**dentro del where puede ir otros elementos SOLO si influyen en que se cumpla la condición 
+funcionando asi: si en sectión o cualquier etiqueta dentro del where se encuentra un hijo especificado (en este caso > ol) y si se encuentra un li (>li) entonces aplica **/
+/** > selector de hijos directos**/
+section::before{
+    content: "Recomendaciones";
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+/**le dice al buscador que dentro de sectión seleccione a su hijo ol para despues seleccionar a su nieto siento los li y con first-child indica que seleccione el primer nieto, en este caso el primer li para pasar aplicar una pseudo clase donde antes del elemento li se aplique el content**/
+section > ol > li:first-child::before{
+    content: "🛡️ Resiste su rugido infernal:";
+    font-size: 1.4rem;
+    font-style: italic;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+/**mismo caso que first-child con la diferencia de que selecciona el numero del hijo indicado en este caso el segundo hijo**/
+section > ol > li:nth-child(2)::before{
+    content: "⚔️ Ataca tras su embestida:"; 
+    font-size: 1.4rem;
+    font-style: italic;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+section > ol > li:nth-child(3)::before{
+    content: "🌀 Cuidado con el campo de gravedad:"; 
+    font-size: 1.4rem;
+    font-style: italic;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+section > ol > li:nth-child(4)::before{
+    content: "🔥 Usa daño sagrado o relámpago:"; 
+    font-size: 1.4rem;
+    font-style: italic;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+section > ol > li:last-child::before{
+    content: "✨ No descuides la segunda fase:"; 
+    font-size: 1.4rem;
+    font-style: italic;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+/**Marker modifica el elemento del li ya sea el puntito que esta despues de cada elemento o cada numero si es un Ol**/
+section > ol > li::marker{
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: bolder;
+    text-shadow: 3px 3px #000;
+}
+aside{
+    display: flex;
+    align-items: center; /**aling items solo funciona con display flex y sirve para alinear elementos**/
+    grid-column: 7/10;
+    grid-row: 1/6;
+}
+
+video{
+    width: 20rem;
+    margin-left: 2rem;
+    border-radius: 5px;
+    filter: contrast(1.3);
+    box-shadow: 0 0 10px 0 #000;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    width: calc(100vw - 15px);
+    height: 3rem;
+    background-color: #000d;
+    border-top: 5px solid #000;
+    font-weight: bolder;
+    text-transform: uppercase;
+    gap: 2rem;
+}
+
+/**Propiedades generales**/
+
+/**Layouts generales**/
+#main-layout{
+    background-image: url("../../../imagenes-comprimidas/EldenBeast/elden-beast-boss_1_11zon.webp");
+    background-size: cover;
+    background-position: 45% 10%;
+    background-repeat: no-repeat;
+    background-color: #222;
+    max-width: 100vw;
+    min-height: 100vh;
+    max-height: 200vh; /**Max height permite que ambos divs usen un 100 de vh**/
+    border-color: #000;
+}
+
+#Section-one{
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    width: calc(100vw - 15px);
+    height: 100vh;
+}
+
+#Section-two{
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    width: calc(100vw - 17px);
+    height: 100vh;
+}
+
+
+
+/**Layouts generales**/
+
+/**Id y clases**/
+#Img-banner{
+    width: 16rem;
+    height: 5rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0 10px 10px 0 #000;
+}
+
+.Main-container{
+    text-align: center;
+    border-style:solid;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+
+@keyframes movimiento {
+    0%{
+        transform: translateY(0px);}/**El 0% representa el inicio **/
+
+    25%{
+        transform: translateY(5px);
+        filter: brightness(1.5);
+        filter: drop-shadow(5px 0px 15px 0 #000); /**filtrer drop-shadow sirve para darle una sombra un elemento de acuerdo a su forma sin que sea como una caja **/
+        border-radius: 10px;
+    } /**El 50% representa la mitad de la animación**/
+    
+    50%{
+        transform: translateY(-5px);
+        filter: brightness(2);
+        filter: drop-shadow(5px 10px 15px #000); 
+    }
+
+    100%{transform: translateY(0);} /**el 100%representa el final y se vuelve al estado 0 o se puede repetir si se usa infinite en animatión**/
+}
+
+.Class-items{
+    width: 8em;
+    height: 7em;
+    animation: movimiento 2s ease infinite;
+}
+
+/**Keyframes de .class-collage**/
+@keyframes fristchild {
+    0%{
+        transform: translateY(0); 
+        filter: grayscale(1);
+    }
+
+    25%{
+        transform: translateY(-5px); 
+        filter: grayscale(0.5);
+        border: 5px solid transparent;
+        border-color: #ddaa00 #000;
+        border-top-left-radius: 5px;/**los bordes tambien se pueden agregar como si fueran las manecillas del reloj similar a padding y marggi**/
+    }
+
+    50%{
+        transform: translateX(-10px); 
+        filter:grayscale(0.5);
+        border: 5px solid transparent;
+        border-color: transparent transparent #000 #ddaa00;
+    }
+
+    75%{
+        transform: translateX(0px); 
+        filter: contrast(150%);
+        border: 5px solid transparent;
+        border-color: transparent transparent #ddaa00 #000;
+    }
+
+    100%{
+        transform: translateY(0px); 
+        filter: contrast(170%);
+    }
+}
+
+.class-collage:nth-child(1):hover{ /**borrar este fragmento de codigo posteriormente**/
+    box-sizing: border-box;
+    animation: fristchild 3s ease 1;
+}
+
+@keyframes secondristchild {
+    0%{
+        transform: translateY(0); 
+        filter: grayscale(1);
+    }
+
+    25%{
+        transform: translateY(-5px); 
+        filter: grayscale(0.5);
+        border: 5px solid transparent;
+        border-color: #ddaa00 #000;
+        border-top-left-radius: 5px;/**los bordes tambien se pueden agregar como si fueran las manecillas del reloj similar a padding y marggi**/
+    }
+
+    50%{
+        transform: translateX(10px); 
+        filter:grayscale(0.5);
+        border: 5px solid transparent;
+        border-color: #ddaa00 #000 transparent transparent;
+    }
+
+    75%{
+        transform: translateX(0px); 
+        filter: contrast(150%);
+        border: 5px solid transparent;
+        border-color: transparent transparent #ddaa00 #000;
+    }
+
+    100%{
+        transform: translateY(0px); 
+        filter: contrast(170%);
+    }
+}
+
+.class-collage:nth-child(2):hover{ /**borrar este fragmento de codigo posteriormente**/
+    box-sizing: border-box;
+    animation: secondristchild 3s ease 1;
+}
+
+@keyframes thirddristchild {
+    0%{
+        transform: translateY(0); 
+        filter: grayscale(1);
+    }
+
+    25%{
+        transform: translateY(5px); 
+        filter: grayscale(0.5);
+        border: 5px solid transparent;
+        border-color: #ddaa00 #000;
+        border-top-left-radius: 5px;/**los bordes tambien se pueden agregar como si fueran las manecillas del reloj similar a padding y marggi**/
+    }
+
+    50%{
+        transform: translateX(-10px); 
+        filter:grayscale(0.5);
+        border: 5px solid transparent;
+        border-color: #ddaa00 #000 transparent transparent;
+    }
+
+    75%{
+        transform: translateX(0px); 
+        filter: contrast(150%);
+        border: 5px solid transparent;
+        border-color: transparent transparent #ddaa00 #000;
+    }
+
+    100%{
+        transform: translateY(0px); 
+        filter: contrast(170%);
+    }
+}
+
+.class-collage:nth-child(3):hover{ /**borrar este fragmento de codigo posteriormente**/
+    box-sizing: border-box;
+    animation: thirddristchild 3s ease 1;
+}
+
+@keyframes fourdrischild {
+    0%{
+        transform: translateY(0); 
+        filter: grayscale(1);
+    }
+
+    25%{
+        transform: translateY(5px); 
+        filter: grayscale(0.5);
+        border: 5px solid transparent;
+        border-color: #ddaa00 #000;
+        border-top-left-radius: 5px;/**los bordes tambien se pueden agregar como si fueran las manecillas del reloj similar a padding y marggi**/
+    }
+
+    50%{
+        transform: translateX(10px); 
+        filter:grayscale(0.5);
+        border: 5px solid transparent;
+        border-color: #ddaa00 #000 transparent transparent;
+    }
+
+    75%{
+        transform: translateX(0px); 
+        filter: contrast(150%);
+        border: 5px solid transparent;
+        border-color: transparent transparent #ddaa00 #000;
+    }
+
+    100%{
+        transform: translateY(0px); 
+        filter: contrast(170%);
+    }
+}
+/**Keyframes de .class-collage**/
+
+/**selecciona el primer div del grupo de divs con la clase first-child**/
+
+.class-collage:nth-child(4):hover{ /**borrar este fragmento de codigo posteriormente**/
+    box-sizing: border-box;
+    animation: fourdrischild 3s ease 1;
+}
+
+.class-collage{
+    box-sizing: border-box;
+    width: 8rem;
+    height: 10em;
+}
+/**Id y clases**/
+
+/**pseudo elementos**/
+
+body::selection{/**los pesudo elementos seleccionan una parte de un elemento para darles estilos
+    pueden ser desde la primera letra de un h1 o incluso el selector para seleccionar textos o elementos dentro de la pagina web**/
+    background-color:#ddaa00;
+    color: #000;
+}
+
+/**pseudo elemento before agrega el texto que esta dentro de content antes del elemento seleccionado**/
+main:nth-child(2) ul li::before{/**"Explicación del selector": primero selecciona el main: dentro del main selecciona el 2 hijo: despues selecciona los ul que estan dentro del hijo: para despues terminar seleccionando los li que estan dentro de los ul del segundo hijo de main**/
+    content: "Objeto:";
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+main:nth-child(3) div ::before{
+    content: "holis";
+    color: beige;
+}
+
+video::after{
+    content: "hola";
+}
+/**pseudo elementos**/
+
+/**Medias queris**/
+/**Medias queris**/

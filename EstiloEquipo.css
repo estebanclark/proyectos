@@ -1,0 +1,259 @@
+@font-face {
+    font-family: "eldengrafia";
+    src: url("Nanum_Myeongjo/NanumMyeongjo-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "con" ;
+    src: url("rax/conthrax-sb.otf") format(truetype);
+    width: 300;
+}
+
+@font-face {
+    font-family: "Tip";
+    src: url("fontring/Mantinia-Regular.ttf") format("truetype");
+}
+
+
+body{
+    background: linear-gradient(1000deg, grey, black);
+
+}
+
+p{
+    color: aliceblue;
+}
+
+#Decoración{
+    width: 200px;
+    height: 0px;
+}
+
+#pagina-costado{
+    position: absolute;
+    height: 600px;
+    position: fixed;
+    width: 575px;
+    margin-left: 765px;
+    margin-top: -19px;
+}
+
+.talismanes-blasfema{
+    color: gold;
+}
+
+
+.buildes{
+    color: gold;
+    background-color: gray;
+    width: 640px;
+    padding-left: -110px;
+    padding-right: -200px;
+    font-size: 29px;
+    border-color: black;
+    border-radius: 5px;
+    font-family: monospace;
+    font-weight: bolder;
+    text-transform: uppercase;   
+}
+#fe{
+    text-decoration: underline;
+    font-style: italic;
+}
+
+
+
+#Cinteligencia{
+    text-decoration: underline;
+    font-style: italic;
+}
+
+a{
+    color: aliceblue;
+}
+
+h6{
+    color: gold;
+    text-decoration: underline;
+    text-shadow: yellow;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;    
+}
+
+h3{
+    text-align: start;
+    width: 700px;
+    font-family: con;
+}
+
+/**primer contenedor**/
+#Contenedor1{
+    display: block;
+    margin-left: 852px;
+    position: relative;
+}
+
+#contacto{
+    color: black;
+    margin-left: 180px;
+    font-style: italic;
+    background-color: #f1c40f;
+    height: 28px;
+    width: 122px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#Nuestro{
+    width: 482px;
+    height: 200px;
+}
+
+/**Segundo contenedor**/
+#Contenedor2{
+    position: relative;
+    display: block;
+    margin-left: 490px;
+    margin-top: -272px;
+}
+
+#derechos{
+    color: black;
+    margin-left: 107px;
+    font-style: italic;
+    background-color: #f1c40f;
+    height: 28px;
+    width: 200px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.importante{
+    text-decoration: underline;
+}
+
+#reservado{
+    width: 390px;
+    height: 200px;
+    
+}
+
+/**tercer contenedor**/
+#Contenedor3{
+    display: block;
+    margin-top: -271px;
+}
+
+#Bandai{
+    color: black;
+    margin-left: 180px;
+    font-style: italic;
+    background-color: #f1c40f;
+    height: 27px;
+    width: 150px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#namco{
+    width: 490px;
+    height: 200px;
+    
+}
+
+.armas{
+    display: block;
+    padding-left: 195px;
+}
+
+#rios{
+    text-decoration: underline;
+    font-style: italic;
+}
+
+#interes{
+    width: 700px;
+    color: gold;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1{
+    width: 730px;
+    font-size: 35px;
+    color: black;
+    background-color: gold;
+    border-color: black;
+    text-align: left;
+    text-decoration:solid;
+    text-decoration: underline;
+    font-style: italic;
+    font-family: Tip;
+}
+
+.Descripcción-builds{
+    border-width: 100px;
+    border-color: white;
+    color: gold;
+    text-align: left;
+    width: 700px;
+    font-size: 24px;
+    background-color: rgba(248, 248, 248, 0.1);
+    border-radius: 5px;
+    font-family: Tip;
+    line-height: 30px;
+}
+
+.Buil_favorita{
+    padding: 20px 5px 20px 20px;
+    width: 500px;
+    background-color: gray;
+    color: #f1c40f;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-style: italic;
+    font-family: Tip;
+}
+
+.enviar_respuesta{
+    background-color: grey;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px rgb(10, 20,12, 0.8);
+    transform: scale3d(0.5);
+}
+
+::placeholder{
+    color: #f1c40f;
+}
+::-ms-value{
+    color: #f1c40f;
+}
+
+#Volver_paginaprincipal{
+    margin-top: 100px;
+    padding: 20px;
+    height: 20px;
+    color: #f1c40f;
+}
+
+
+.ilustración-build{
+    width: 700px;
+    border-radius: 3px;
+}
+
+h4{
+    color: gold;
+}
+form{
+    color: gold;
+}
+h3{
+    color: gold;
+}
+
+li{
+color: gold;}

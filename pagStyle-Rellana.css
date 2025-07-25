@@ -1,0 +1,1342 @@
+@font-face {
+    font-family: "Fontring";
+    src: url("../../fontring/Mantinia-Regular.ttf") format("truetype");
+    font-weight: 400px;
+}
+
+/**estilos generales**/
+html, body{
+    position: relative;
+    background-color: #000;
+    font-size: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    width: 8rem;
+    height: 4rem;
+}
+
+/**display block hace que un elemento se convierta en un bloque ocupando todo el ancho displible como un bloque y las propiedades del box sizing se pueden aplicar, ademas cada elemento con ese tipo de display ocupa una nueva linea si no se disminuye el ancho**/
+
+
+
+@keyframes border-animation{
+    0%{
+        border-right: #000, solid 3px;
+        border-left: #000, solid 3px;
+        box-shadow: 0 0 10px 0 #000;
+        filter: contrast(1);
+    }
+
+    50%{
+        border-right: #db1919 solid 5px;
+        border-left: 5px solid #4444bb;
+        box-shadow: 0 0 10px 0 #000;
+        filter: brightness(0.5);
+    }
+    100%{
+        border-right: #000 solid 5px;
+        border-left: #000, solid 3px;
+        box-shadow: 0 0 10px 0 #000;
+    }
+}
+
+
+/**100% ocupa todo el ancho de su CONTENEDOR PADRE**/
+/**100vw ocupa todo el ancho disponible del VIEWPORT es decir todo lo que se alcanza a ver en pantalla o simplemente caso el ancho visible**/
+:where(nav, h1, img, a){
+    display: block;
+
+} 
+/** Sticky es similar a fixed pero no saca al elemento del flujo osea sigue ocupando su lugar pero moviendose conforme al scroll**/
+aside{/****/
+    background:linear-gradient(to left, #0000af9a, #000000);
+    position: fixed;
+    top: 4.8rem;
+    padding: 5px;
+    width: 5.5rem;
+    height: 90vh;
+    text-wrap: balance;
+    text-overflow: ellipsis;
+    font-size: 1rem;
+    color: #fff;
+    white-space: pre-wrap;
+    word-break: keep-all;
+    word-wrap: normal; /**evita que se desborde el contenedor cortando y acomodando palabras**/
+    border-right: #0000af solid 3px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+aside a{
+    display: block;
+    background: linear-gradient(to right, #00008f, #000);
+    word-wrap: break-word;
+    background-color: #0000af;
+    height: 8rem;
+    width: auto;
+    padding-top: 2rem;
+    padding-bottom: 0;
+    border-radius: 30px;
+    text-align: center;
+    color: #fff;
+    box-sizing: border-box;
+}
+header{
+    position: relative;
+    display: flex;
+    background-color: #0009;
+    width: 90vw;
+    height: 19em;
+    padding-top: 4rem;
+    
+    margin-left: 7rem;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: 6s;
+}
+
+header > img{
+    position: absolute;
+    width: 25em;
+    height: 15em;
+    border-radius: 10px;
+    left: 750px;
+    filter: grayscale(30%) brightness(1.1);
+    box-shadow: 0 0 20px 0 #000;
+}
+
+
+header:hover p {
+    background-color: #ebe8399a;
+    margin-bottom: 2rem;
+    font-style: italic;
+    letter-spacing: 0.1rem;
+    text-shadow: 1px 1px #000;
+    box-shadow: 0 0 10px 0 #000;
+    border: 5px #000 solid;
+    border-radius: 10px;
+    box-sizing: border-box;
+    transform: translateY(-38px);
+    animation: movestexto 3s ease forwards;
+}
+header:hover img {
+    animation: movesvideo 3s ease forwards;
+}
+
+header:hover{
+    animation: cambioGradiente 5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cambioGradiente {
+    0% {background: linear-gradient(to right, #000000, #110000);}
+    10%{background: linear-gradient(to right, #190000, #3a0000);}
+    20%{background: linear-gradient(to right, #3f0000, #5f0000);}
+    30%{background: linear-gradient(to right, #190000, #3a0000);}
+    40%{background: linear-gradient(to right, #4f0000, #7f0000);}
+    50%{background: linear-gradient(to right, #990000, #9f0000);}
+    60%{background: linear-gradient(to right, #a90000, #ba0000);}
+    70%{background: linear-gradient(to right, #cf0000, #d10000);}
+    80%{background: linear-gradient(to right, #ef0000, #ff0000);}
+    90%{background: linear-gradient(to right, #7f00009a, #4a00009a);}
+    100%{background: linear-gradient(to right, #3f00009a, #000000ff);}
+}
+/**para qaue se activen ambas animaciones al pasar el hover no se debe de aplicar el hover al p o al video si no que al header
+no es lo mismo header p:hover que header:hover p dado que el primero aplica el hover al p mientras que el segundo lo aplica al header**/
+
+header p{
+    position: absolute;
+    display: block;
+    padding-left: 1em;
+    font-size: 25px;
+    font-weight: bolder;
+    width: 43rem;
+    white-space: pre-wrap;
+    text-wrap: pretty;
+    overflow: hidden;
+}
+/**Recordando: white space funciona en conjunto con otras propiedades pero en general esta se encarga de controlar el flujo del texto sin embargo white space funciona en base a como este el codigo escrito en el codigo fuente es decir los saltos de linea del codigo fuente afecta al como se ve en la pagina y pre-wrap evita que el contenido se desborde**/
+
+@keyframes movestexto {
+    0%{
+        right: 700px;
+    }
+    50%{
+        right: 500px;
+    }
+    100%{
+        right: 30px;
+    }
+}
+
+@keyframes movesvideo{
+    0%{
+        left: 750px;
+    }
+    50%{
+        left: 500px;
+    }
+    100%{
+        left: 30px;
+    }
+}
+
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 100%;/**si existen elementos que desborden o ocasionen scroll horizontal es mas recomendable usar 100% que 100vw ya que 100% ocupa todo el ancho de la pantalla de su padre( el body)**/
+}
+
+main > h2{
+    width: fit-content;
+}
+
+main #Card-container h3{
+    position: absolute;
+    left: 25rem;
+}
+
+
+
+/**el signo de + aplica los estilos a otros elementos que estan despues del elemento que tiene el +**/
+main .objetos + #Card-container + #lore + div + div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    width: 70em;
+    height: 28em;
+    margin-top: 1rem;
+}
+
+section{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    font-size: 18px;
+    z-index: 5;
+}
+
+section > div:nth-child(3){
+    display: flex;  
+    flex-direction: column;
+    align-items: stretch; 
+    align-items: center;
+    top: 80px;
+    width: 80vw;
+    height: 23em;    
+    margin: 4em 0 0 0;
+}
+
+section > div:nth-child(3) > div >h2{
+    color: #c0b40c;
+    font-family: Fontring;
+    font-style: italic;
+    font-size: 25px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-shadow: 1px 1px #000;
+}
+
+table{
+    color: #c0b40c;
+    font-size:28px;
+    font-family: Fontring;
+    text-align: center;
+    height: 60vh;
+    width: 80vw;
+    margin-top: 2em;
+}
+
+
+footer{
+    display: flex;
+    flex-wrap: wrap row;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;  
+    color: #c0b40c;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 1em;
+    text-decoration: underline;
+    text-align: center;
+    z-index: 20;
+}
+
+footer h2 {
+    display: inline-block;
+    width: 10em;
+    padding: 3px;
+    /** flex-grow indica cuanto espacio debe de ocupar un elemento usando valores desde 1,2,3,4,5,6, etc. dependiendo del tamaño del contendor**/
+    /**flex-basis: 100px;indica cuanto espacio ocupa un elemento sin embargo esto afecta al elemento en base al flex direction**/
+    /**flex-shrink: 1; indica cuanto se encoge un contenedor aceptando valores desde el 1,2,3,4,5**/
+    background-color: #333;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+}
+
+dialog{
+    width: 50%;
+    height: 5%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #000a;
+    backdrop-filter: blur(4px);
+}
+
+dialog h2{
+    display: block;
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 1.9em;
+    color: #fff;
+    margin: auto;
+    width: 50%;
+    height: 30%;
+    border-radius: 20px;
+    border: 3px #000 solid;
+    background-color: #0043;
+    box-shadow: 0 0 10px 0 #000;
+}
+
+dialog p{
+    color: #fff;
+    font-size: 1.3em;
+    filter: brightness(4);
+}
+
+dialog button{
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0.5;
+    transition:  0.4s ease;
+}
+
+dialog button:hover{
+    background-color: #000;
+    border-radius: 20px;
+    border-color: #000;
+    color: #fff;
+    transform: translateY(10px);
+    opacity: 1;
+}
+
+#section-two section > div:last-child{
+    background-color: #0003;
+    width: 80vw;
+    margin-top: -4em;
+    margin-bottom: 3em;
+    color: #c0b40c;
+    border-radius: 5px;
+    filter: brightness(1.5);
+}
+
+#section-two section > div:last-child hr{
+    width: 100%;
+    height: 0.2em;
+    background-color: #c0b40c;
+}
+
+#section-two section > div:last-child > div:first-child{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#section-two section > div:last-child > div:first-child > img{
+    object-fit: contain;
+    width: 10em;
+    height: 7em;
+    filter: brightness(1);
+}
+
+
+/**estilos generales**/
+/**layouts principales**/
+
+#section-one{
+    position: relative;
+    display: block;
+    background-image: url("../../../imagenes-comprimidas/rellana-relana/monkele-CaoQpm47pKSHF51Kwed_5-Rellana.Webp");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+#section-two{
+    position: relative;
+    background-image: url("../../../imagenes-comprimidas/rellana-relana/rennala-background.Webp");
+    background-size: cover;
+    background-attachment: fixed;
+    display: block;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+/**layouts principales**/
+/**Clases y ids**/
+
+#builds-container{
+    background-color: #00005f7f;
+    border: 5px solid #004;
+    border-radius: 10px;
+    padding: 5px;
+    
+}
+
+.Build{
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    width: 32%;
+    height: 98%;
+    color: #fff;
+    font-size: 25px;
+    background: linear-gradient(to bottom, #000a, transparent);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top: 5px solid #000;
+    filter: blur(10px);
+    opacity: 0.5;
+    transition: 0.5s ease;
+}
+
+.Build:hover{
+    filter: none;
+    opacity: 10;
+    box-shadow: 0 0 10px 0 #000;
+    backdrop-filter: blur(5px);
+}
+
+.Build-span{
+    padding-left: 5px;
+    font-style: italic;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-decoration: underline;
+    border-radius: 5px;
+    border-left: 5px #000 solid;
+}
+
+:where(.Build > ul > li){
+    font-size: 15px;
+    list-style: none;
+}
+
+.Build__item{
+    display: block;
+    width: 8em;
+    height: 65px; 
+    margin-top: 3px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 #000;
+}
+
+#container-debilidades-build{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#Meta-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30em;
+    height: 40em;
+    gap: 0px;
+}
+
+#Meta-container h2{
+    display: block;
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    padding-top: 0.3em;
+    background-color: #005a;
+    border: 3px solid #000;
+    border-radius: 40px;
+    text-shadow: 1px 1px #000;
+}
+
+/**dentro de meta-container selecciona el p el cual indica que es el segundo hijo del contenedor meta-container **/
+
+#Meta-container p:nth-child(2){
+    background-image: url("../../../imagenes-comprimidas/rellana-relana/cmaliket.webp");
+    background-position: 90% 50%;
+    background-size: 400px;
+}
+
+#Meta-container p:nth-child(3){
+    background-image: url("../../../imagenes-comprimidas/rellana-relana/botelladeyaros.Webp");
+    background-size: cover;
+    background-position: 50% 0;
+}
+
+#Meta-container p:last-child{
+    background-image: url("../../../imagenes-comprimidas/rellana-relana/espinass.Webp");
+    background-size: 400px;
+    background-position: 90% 0;
+}
+
+#debilidades-container{
+    margin-top: 0.1em;
+    width: 25em;
+    height: 37em;
+}
+
+#debilidades-container > ul{
+    display: flex;
+    flex-direction:column;
+    text-align: center;
+    list-style: disc;
+    height: 100%;
+    width: 100%;
+    font-size: 1em;
+    padding: 5px;
+    border-radius: 10px;
+    background-image: url("../../../imagenes-comprimidas/rellana-relana/img-comprimidas-tarjetas/rellanadebilidades.webp");
+    background-size: 740px;
+    background-position: 70% 0;
+    box-shadow: 10px 0 10px 0 #000;
+    gap: 60px;
+}
+
+#debilidades-container > ul >li {
+    margin: 1em 0.4em 0 0 ;
+    text-wrap: balance;
+    text-shadow: 1px 1px #000;
+    font-weight: bolder;
+    white-space: pre-wrap;
+    border-radius: 50px;
+    border: solid #004 1px;
+    box-shadow: 0 0 10px 0 #000000;
+    backdrop-filter: blur(5px);
+}
+
+.meta__item{
+    display: block;
+    width: 90%;
+    height: 19em;
+    color: darkgoldenrod;
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 1.5em;
+    padding-top: 2em;
+    border-radius: 5px;
+    text-shadow: 1px 1px #000;
+    text-align: center;
+    
+}
+
+.Nav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    gap: 20px;
+    padding: 5px;
+    height: 3.5rem;
+    width: 100%;
+    top: 0;/**cuando se aplica fixed a un elemento y que este este pensado para que ocupe un espacio en la parte de arriba de una pagina para evitar problemas se debe de poner "top 0 para "anclarlo"**/
+    left: 0;
+    right: 0; 
+    border-bottom: 4px #0000af solid;
+    box-sizing: border-box;
+    background-color: #0009;
+    z-index: 50; /**z index proviene de un contexto de apilamiento en donde el elemento con un mayor z index estara sobre encima de los elementos que tengan menos z index llendo desde el mayor hasta el menor **/
+}
+
+.Nav > img{
+    width: 6rem;
+    height: 3rem;
+    border-left: 3px solid #4444bb;
+    border-right: 3px solid #db1919;
+    border-bottom: #000 solid 5px;
+    border-top: #000 solid 5px;
+    object-fit: cover;/**objetc-fill es similar a las propiedades usadas para el background **/
+    object-position: 0% 20%;
+    animation: border-animation 5s normal infinite ;
+}
+
+/**Selecciona dos etiquetas o selectores al usar un ,**/
+
+.Nav__item, h1{
+    overflow: hidden;
+    background-color: #4444449a;
+    padding: 5px;
+    height: 1.5em;
+    min-width: 50px;
+    max-width: 500px;/**indica el maximo de pixeles o anchura que puede creecer este elemento permitiendo que este se encoga si le sobra espacio respecto a su contenido**/
+    color: #fff;
+    border-bottom: 2px solid #db1919;
+    border-left: 2px solid #db1919;
+    border-top: 2px solid #0000ff;
+    border-right: 2px solid #0000ff;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    font-weight: bolder;
+    text-align: center;   
+    text-overflow: ellipsis;
+    text-wrap: balance;
+    text-shadow: 1px 1px #000;
+    white-space: pre-line;
+    box-shadow: -15px 10px 5px 0 #000  ;
+    box-sizing: border-box;
+
+}
+
+
+
+.Nav__item:hover,
+.Nav h1:hover{
+    background-color: #a37e10;
+    box-shadow: 0 0 10px 0 #000;
+    border-color: #000;
+    transition: 1s ease ;
+}
+
+
+#Section-tittle{
+    display: block;
+    width: 70vw;
+    font-size: 50px;
+    font-family: Fontring;
+    font-weight: bolder;
+    text-align: center;
+    text-decoration: underline;
+    background-color: #0005;
+    border: 10px;
+}
+
+.Collage{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    text-align: center;
+    gap: 1em;
+    box-sizing: border-box;
+    filter: brightness(1.2);
+}
+
+.Collage h4{
+    display: block;
+    position: absolute;
+    width: 20%;
+    top:200px;
+    font-weight: bolder;
+    font-family: fontring;
+    font-size: 25px;
+    background-color: #0003;
+    backdrop-filter: blur(5px);
+}
+
+/**esto indica que dentro del .collage selecciona el elemento que este en la posicion 8 o sea la 8taba etiqueta y ademas tenga que ser un h4 para aplicar el estilo el > hace que seleccione directamente a ese hijo**/
+.Collage > h4:nth-child(8){
+    left: 900px;
+} 
+
+.Collage >h4:nth-child(4){
+    left: 200px;
+}
+
+/**aclaracion nth-child solo verifica la posicion del elemento al que se le defina nth-child para aplicar los estilos deseados sin embargo toma en cuenta todos los tipos de etiquetas en base a su posición**/
+
+.Collage >h4:nth-child(4){
+    left: 310px;
+}
+
+/**nth-of-type verifica la posicion pero unicamente del tipo de etiquetas, en este caso verifica que este h4 se encuentre en la posicion 3 de los h4 es decir no toma en cuenta la posicion de las otras etiquetas**/
+.Collage >h4:nth-of-type(3){
+    left: 600px;
+}
+
+.Collage >h4:first-of-type{
+    left: 20px;
+}
+
+.Collage__Item{
+    height: 15em;
+    width: 15em;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 5px #000 none;
+    box-shadow: 0 20px 10px 0 #000a;
+}
+
+
+.information{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    width: 90vw;
+    height: 12em;
+    gap: 15px;
+    box-sizing: border-box;
+
+}
+/**justify content sirve para alinar los elementos en base a su eje es decir el flow direction o flex direction, en este caso se usa space evenly que asigna un margen a cada elemento para separarlo equitativamente de los demas**/
+
+.information img{
+    width: 15em;
+    height: 10em;
+    object-fit: fill;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px 0 #000;
+}
+
+.information div:first-child{
+    display: flex;
+    flex-flow: wrap column;
+    font-size: 20px;
+    width: 20em;
+}
+
+.information div:last-child{
+    display: flex;
+    flex-flow: wrap column;
+    font-size: 20px;
+    width: 17em;
+}
+
+
+.information__item{
+    background: linear-gradient(to top, #000a, #0009, #0008 , transparent);
+    padding: 5px;
+    border: #c0b40caa solid 5px;
+    border-top: none;
+    box-sizing: border-box;
+}
+
+.hr-information{
+    background-color: #c0b40c;
+    border-top-left-radius: 30%;
+    border-top-right-radius: 30%;
+    height: 3px;
+    filter: brightness(1);
+}
+
+.hr-information-mod{
+    width: 50em;
+    margin-bottom: 1em;
+}
+
+.information__h3{
+    color: #c0b40c;
+    font-weight: bolder;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.objetos{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    height: 20rem;
+    width: 33rem;
+    margin-top: 1rem;
+    gap: 10px;/**gap funciona en vase al tipo de display ya sea grid o flex, este ultimo gap añadira espacio dependiendo 
+    del flex-direction**/
+    z-index: 10;
+}
+
+.objetos > h2{
+    display: block;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    height: 3rem;
+    width: 27rem;
+    top: 0;
+    left: 30px;
+    letter-spacing: 4px;
+    border-radius: 10px;
+    border: 5px #000 solid;
+    border-bottom: none;
+    background:linear-gradient(to bottom, #00003a, transparent);
+    text-shadow: 1px 1px #000;
+    z-index: 25px;
+}
+
+.objetos__item{
+    position: relative;
+    width: 16rem;
+    height: 15rem;
+    top: 23px;
+    right: 10px;
+    object-fit:cover;/**recordando object-fill funciona como background-img**/
+    z-index: 20px;
+}
+
+
+
+#Card-container{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    text-align: center;
+    background-color: #0009;
+    margin: 1rem 0 0 4rem;
+    font-size: 18px;
+    padding: 5px;
+    width: 67em;
+    height: 30em;
+    border-radius: 10px;
+    gap: 0.1em;
+}
+
+.Carts1{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: auto;
+    background-color: #0032;
+    border-top: 10px solid #000;
+    margin: 4rem 0rem 0 0;
+}
+
+
+
+.Carts1-item{
+    position: absolute;
+    display: inline-block;
+    height: 24em;
+    top: 1em;
+    width: 10em;
+    z-index: 0;
+}
+
+.Carts1-item:first-child{
+    background-image: url("../../../imagenes-comprimidas/rellana-relana/img-comprimidas-tarjetas/TipoDeArma_8_11zon.webp");
+    background-size: cover;
+    background-position: 50% 0%;
+    left: 3em;
+    filter: grayscale(100%);
+    transition: 0.3s;
+    z-index: 30;
+}
+
+
+.Carts1-item:first-child:hover{
+    background-color: #00f;
+    left: 3em;
+    height: 24.5em;
+    filter: grayscale(0%);
+    transform: translateY(-10px);
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 #000;
+    text-shadow: 1px 1px #000;
+    z-index: 34;
+}
+
+.Carts1-item:nth-child(2){
+    background-image: url("../../../imagenes-comprimidas/rellana-relana/img-comprimidas-tarjetas/habilidadEspecialEspada_7_11zon.webp");
+    background-size: 550px cover;
+    background-position: 50% 30%;
+    left: 8em;
+    filter: grayscale(100%);
+    transition: 0.3s;
+    z-index: 31;
+}
+
+
+
+.Carts1-item:nth-child(2):hover{
+    background-color: #f2a;
+    left: 8em;
+    height: 24.5em;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 #000;
+    text-shadow: 1px 1px #000;
+    filter: grayscale(0%);
+    z-index: 35;
+    transform: translateY(-10px);
+}
+
+.Carts1-item:nth-child(3){
+    background-image: url("../../../imagenes-comprimidas/rellana-relana/img-comprimidas-tarjetas/RequisitosEspadas_6_11zon.webp");
+    background-size: 700px;
+    background-position: 50% 20%;
+    
+    left: 12em;
+    transition: 0.3s;
+    filter: grayscale(100%);
+    z-index: 32;
+}
+
+.Carts1-item:nth-child(3):hover{
+    background-color: #5fa;
+    height: 24.5em;
+    transform: translateY(-10px);
+    filter: grayscale(0%);
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 #000;
+    text-shadow: 1px 1px #000;
+    z-index: 36;
+}
+
+.Carts1-item:last-child{
+    background-image: url("../../../imagenes-comprimidas/rellana-relana/img-comprimidas-tarjetas/DescripcionEspadas_5_11zon.webp");
+    background-size: cover;
+    background-position: 10% 0%;
+    z-index: 33;
+    transition: 0.3s;
+    filter: grayscale(100%);
+    left: 18em;
+}
+
+.Carts1-item:last-child:hover{
+    height: 24.5em;
+    filter: grayscale(0%);
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 #000;
+    text-shadow: 1px 1px #000;
+    transform: translateY(-10px);   
+    z-index: 37;
+}
+
+
+.Carts2{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: auto;
+    background-color: #0032;
+    border-top: 10px solid #000;
+    margin: 4rem 0rem 0;
+}
+
+
+.Carts2-item{
+    position: absolute;
+    display: inline-block;
+    top: 1em;
+    height: 24em;
+    width: 10em;
+    z-index: 0;
+}
+
+
+.Carts2-item:first-child{
+    background-image: url("../../../imagenes-comprimidas/rellana-relana/img-comprimidas-tarjetas/tipodearmahechizo.Webp");
+    background-position: 40% 0%;
+    background-size: cover;
+    z-index: 30;
+    left: 5em;
+    filter: grayscale(100%);
+    transition: 0.3s;
+}
+
+.Carts2-item:first-child:hover{
+    background-color: #00f;
+    height: 24.5em;
+    transform: translateY(-10px);
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 #000;
+    text-shadow: 1px 1px #000;
+    z-index: 34;
+    filter: grayscale(0%);
+}
+
+.Carts2-item:nth-child(2){
+    background-image: url("../../../imagenes-comprimidas/rellana-relana/img-comprimidas-tarjetas/EfectoHechizo_3_11zon.webp");
+    background-size: 500px;
+    background-position: 0% 30%;
+    left: 10em;
+    filter: grayscale(100%);
+    z-index: 31;
+    transition: 0.3s;
+}
+
+.Carts2-item:nth-child(2):hover{
+    background-color: #f2a;
+    height: 24.5em;
+    transform: translateY(-10px);
+    filter: grayscale(0%);
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 #000;
+    text-shadow: 1px 1px #000;
+    z-index: 35;
+}
+
+.Carts2-item:nth-child(3){
+    background-image: url("../../../imagenes-comprimidas/rellana-relana/img-comprimidas-tarjetas/RequisitosHechizo_2_11zon.webp");
+    background-size: cover;
+    background-position: 45% 0;
+    left: 15em;
+    filter: grayscale(100%);
+    z-index: 32;
+    transition: 0.3s;
+}
+
+.Carts2-item:nth-child(3):hover{
+    background-color: #5fa;
+    height: 24.5em;
+    transform: translateY(-10px);
+    filter: grayscale(0%);
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 #000;
+    text-shadow: 1px 1px #000;
+    z-index: 36;
+}
+
+.Carts2-item:last-child{
+    background-image: url("../../../imagenes-comprimidas/rellana-relana/img-comprimidas-tarjetas/DescripcionHechizo_1_11zon.webp");
+    background-position: 40% 0%;
+    background-size: 320px;
+    left: 20em;
+    filter: grayscale(100%);
+    z-index: 33;
+    transition: 0.3s;
+}
+
+.Carts2-item:last-child:hover{
+    background-color: #9af;
+    height: 24.5em;
+    z-index: 37;
+    filter: grayscale(0%);
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 #000;
+    text-shadow: 1px 1px #000;
+    transform: translateY(-10px);   
+}
+
+#lore{
+    background-color: #2222;
+    text-align: center;
+    width: 50em;
+    height: 15em;
+    margin:  1rem 0 0 0;
+    padding: 5px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+} 
+
+#lore > h2{
+    display: block;
+    height: 12%;
+    width: 40%;
+    margin: auto;
+    border-radius: 5px;
+    border: 5px solid #000;
+    text-shadow: 1px 1px #000;
+}
+
+#lore > p{
+    display: inline-block;
+    height: 70%;
+    font-size: 1.3em;
+    font-weight: bolder;
+    text-wrap: balance;
+    text-shadow: 1px 1px #000;
+    border-top: 5px solid #000;
+    background-image: url("../../../imagenes-comprimidas/humo-textura.webp");
+}
+
+#builds{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 7px;
+    margin: 2em 0 0 0;
+    width: 80vw;
+    height: 30em;
+}
+
+#builds > :where(.BuildContainer:first-child, .BuildContainer:nth-child(2),.BuildContainer:last-child){
+    background-color: #000a;
+}
+
+.BuildContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    width: auto;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.BuildContaier__item{
+    font-size: inherit;
+    background: linear-gradient(to right, #00009a, #0000a9);
+    background-clip: text; /**esta propiedad controla a que parte del elemento se va aplicar el background color**/
+    -webkit-background-clip: text;/**Webkit es una sufijo usado siendo las mismas propiedades pero haciendolas compatibles para otros buscadores**/
+    -webkit-text-fill-color: transparent;
+    filter: brightness(3);
+}
+
+.BuildContainer__video{
+    width: 20em;
+    height: 10em;
+    border-radius: 10px;
+}
+
+.Alma{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5em;
+    width: 80vw;
+    height: 30em;
+    gap: 10px;
+    filter: brightness(3);
+    color: #c0b40c;
+}
+
+.Alma__hr{
+    height: 1px;
+    width: 100%;
+    background-color: #c0b40c;
+}
+
+.Alma > h2{
+    position: absolute;
+    border-left: 3px solid #000;
+    background: linear-gradient(to right, transparent, #0003);
+    padding: 5px;
+    top: 0px;
+    left: 350px;
+}
+
+/**le dice al programa que seleccione .AlmaContainer y seleccione a sus hijos directos > donde (where) agrega el grupo de etiquetas escrito en where**/
+.AlmaContainer > :where(h4, p, ul){
+    background: linear-gradient(to bottom, #000, transparent);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.AlmaContainer__Ul > ul, li{
+    display: block;
+    text-align: center;
+    list-style: none;
+    margin-bottom: 5px;
+    text-decoration: underline;
+}
+
+.AlmaContainer{
+    display: flex;
+    flex-flow: nowrap column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    height: 27em;
+    width: 25em;
+}
+
+.AlmaContainer__Ul{
+    align-items: none;
+}
+
+.Recs{
+    color: rgb(211, 182, 16);
+}
+
+
+/**seccion de la tabla**/
+
+.Table_tr{
+    background-color: #0029;
+}
+
+.Table_tr:first-child{
+    text-align: left;
+}
+
+.img-table{
+    
+    width: 10em;
+    height: 7em;
+}
+
+
+#Tbody > .Table_tr >:where(td:first-child){
+    text-align: left;
+    background-color: #0009;
+}
+/**seccion de la tabla**/
+
+/**Clases y ids**/
+/**Pseudoelementos**/
+
+
+
+.Carts1::before{
+    content: "⚔️ Espadas gemelas de rellana";
+    margin-left: 0.5em;
+    font-style: italic;
+    font-size: 1.5em;
+    text-decoration: underline;
+    text-shadow: 1px 1px #000;
+}
+
+.Carts2::after{
+    content: "🌕 LUNAS GEMELAS DE RELLANA";
+    font-style: italic;
+    font-size: 1.5em;
+    text-decoration: underline;
+    text-shadow: 1px 1px #000;
+}
+
+.Carts1-item:first-child::before{
+    display: inline-block;
+    content: "Tipo de arma:";
+    padding-left: 0.2em;
+    font-style: italic;
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 1px 1px #000;
+    border-left: 3px solid #000;
+    letter-spacing: 0.1em;
+}
+
+.Carts1-item:nth-child(2)::before{
+    display: inline-block;
+    content: "Habilidad Especial:";
+    padding-left: 0.2em;
+    font-style: italic;
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 1px 1px #000;
+    border-left: 3px solid #000;
+    letter-spacing: 0.1em;
+}
+
+.Carts1-item:nth-child(3)::before{
+    display: inline-block;
+    content: "Requisitos y Escalado:";
+    padding-left: 0.2em;
+    font-style: italic;
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 1px 1px #000;
+    border-left: 3px solid #000;
+    letter-spacing: 0.1em;
+}
+
+.Carts1-item:nth-child(4)::before{
+    display: inline-block;
+    content: "Descripción Temática:";
+    padding-left: 0.2em;
+    font-style: italic;
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 1px 1px #000;
+    border-left: 3px solid #000;
+    letter-spacing: 0.1em;
+}
+
+.Carts2-item:first-child::before{
+    display: inline-block;
+    content: "Tipo de Hechizo:";
+    padding-left: 0.2em;
+    font-style: italic;
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 1px 1px #000;
+    border-left: 3px solid #000;
+    letter-spacing: 0.1em;
+}
+
+.Carts2-item:nth-child(2)::before{
+    display: inline-block;
+    content: "Efecto del hechizo:";
+    padding-left: 0.2em;
+    font-style: italic;
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 1px 1px #000;
+    border-left: 3px solid #000;
+    letter-spacing: 0.1em;
+}
+
+.Carts2-item:nth-child(3)::before{
+    display: inline-block;
+    content: "Requisitos y consumo:";
+    padding-left: 0.2em;
+    font-style: italic;
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 1px 1px #000;
+    border-left: 3px solid #000;
+    letter-spacing: 0.1em;
+}
+
+.Carts2-item:nth-child(4)::before{
+    display: inline-block;
+    content: "Descripcción tematica:";
+    padding-left: 0.2em;
+    font-style: italic;
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 1px 1px #000;
+    border-left: 3px solid #000;
+    letter-spacing: 0.1em;
+}
+
+#builds-container div:first-child > ul::before{
+    content: "Espada negra de maliketh";
+    text-shadow: 1px 1px #000;
+}
+
+#builds-container div:nth-child(2) > ul::before{
+    content: "Botella de perfume fulgurante";
+}
+
+#builds-container div:nth-child(3) > ul::before{
+    content: "Espinas impenetrables";
+}
+
+
+
+
+/**Pseudoelementos**/
+/**Media-queris**/
+/**Media-queris**/
