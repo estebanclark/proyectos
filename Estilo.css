@@ -1,0 +1,321 @@
+/* Para darle estilo a un elemento en css se escribe su nombre en este caso
+para cambiar los parrafos escribo la letra p que es la etiqueta p que ademas despues se habren comillas
+dentro de estas se escriben los atributos a cambiar
+eso de escribir el nombre de la etiqueta a modificar se llama el selector*/
+
+/**se configura una tipografia descargada**/
+@font-face {
+    font-family: "kurale";
+    src: url("Kurale/Kurale-Regular.ttf") format("truetype");
+    width: 900;
+}
+
+
+p {
+    color: yellow;
+    text-align: justify;
+    font-size: large;
+    font-family: serif;
+    font-size: 24px;
+    color: #d4af37;
+    font-weight: bolder;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+}
+
+/**la forma de seleccionar un elemento html puede ser con una clase y se selecciona con un punto y el nombre de la clase**/
+.logotipo{
+    display: flex;
+    padding-left: 20px;
+    margin: -30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    max-width: -20px;
+    transform: translateY(-100px)
+
+}
+
+.goty{
+    padding-top: -60px;
+    margin: 50px;
+    margin-top: -80px;
+    margin-left: -2px;
+}
+
+.Oficial {
+    color: white;
+    float: right;
+    padding-right: 25px;
+    padding-left: 17px;
+    background-color: #333333;
+    border-radius: 0%;
+    font-size: larger;
+    font-weight: 100;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    display: block;
+}
+
+.Serie{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    vertical-align: center;
+    margin: 10px;
+    margin-top: 45px;
+    font-size: 24px;
+    text-align: left;
+    font-style: italic;
+    margin-right: 600px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.platino{
+    display: block;
+    max-width: 250px;
+    margin-top: -20px;
+    float: right;
+    margin-left: -90px;
+    position: relative;
+    left: -300px;
+    border-radius: 10px;
+    opacity: 0.7;
+}
+
+.Miya{ 
+    color: white;
+    float: right;
+    padding-right: 25px;
+    padding-left: 17px;
+    background-color: #333333;
+    border-radius: 0%;
+    font-size: larger;
+    font-weight: 100;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+/*para darle estilo a una clase de html debe de tener el . y nombre de la clase por ejemplo .Recomendacion*/
+.Recomendacion{
+    color: white;
+    float: right;
+    padding-right: 25px;
+    padding-left: 17px;
+    background-color: #333333;
+    border-radius: 0%;
+    font-size: larger;
+    font-weight: 100;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+
+body {
+    background: linear-gradient(to bottom right, #000000, #333333, #d4af37);
+    background-image: url(https://img.genial.ly/60264d9cacc8b60fa9e5593c/d96cfeb7-45c9-4d7d-878c-095271eaadd1.jpeg);
+    
+}
+
+.derechos{
+    text-align: right;
+    font-size: larger;
+    text-shadow: 19cm;
+    text-align: center;
+    color: #d4af37;
+    text-decoration: underline;
+}
+
+.claves{
+    color: white;
+    float: right;
+    padding-right: 25px;
+    padding-left: 17px;
+    background-color: #333333;
+    border-radius: 0%;
+    font-size: larger;
+    font-weight: 100;
+    text-decoration: none;
+    text-align: center; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.Equipo{
+    color: white;
+    float: right;
+    padding-right: 25px;
+    padding-left: 17px;
+    background-color: #333333;
+    border-radius: 0%;
+    font-size: larger;
+    font-weight: 100;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.Jefes1{
+    max-width: 150px;
+    display: inline-block;
+    align-items: center;
+    vertical-align: middle;
+    margin: 40px;
+    margin-top: -19px;
+    margin-right:-100px; 
+    margin-left: 9px;
+}
+
+p{
+    text-align: center;
+    font-family: Montserrat;
+}
+
+.mucho{
+    display: flex;
+    justify-content: left;
+    text-align: center;
+    vertical-align: center;
+    margin: auto;
+    font-size: larger;
+    text-align: right;
+    font-style: italic;
+    margin-left: 672px;
+}
+.mamon{
+    display: flex;
+    justify-content: left;
+    text-align: center;
+    vertical-align: center;
+    margin: auto;
+    font-size: larger;
+    text-align: right;
+    font-style: italic;
+    margin-left: 700px;
+}
+
+.cuenta{
+    max-width: 150px;
+    display: inline-block;
+    align-items: center;
+    vertical-align: middle;
+    margin: 55px;
+    margin-top: -20px;
+}
+
+.Ccomunidad{
+    display: flex;
+    justify-content: left;
+    text-align: center;
+    vertical-align: center;
+    margin: auto;
+    font-size: larger;
+    text-align: right;
+    font-style: italic;
+    margin-left: 770px;
+}
+
+.gran{
+    max-width: 150px;
+    display: inline-block;
+    align-items: center;
+    vertical-align: middle;
+    margin: 40px;
+    margin-top: -19px;
+    margin-right:-100px; 
+    margin-left: 9px;
+} 
+
+.mas{
+    display: flex;
+    justify-content: left;
+    text-align: center;
+    vertical-align: center;
+    margin: auto;
+    font-size: larger;
+    text-align: right;
+    font-style: italic;
+    margin-left: 756px;
+}
+
+.muchos{
+    max-width: 150px;
+    display: inline-block;
+    align-items: center;
+    vertical-align: middle;
+    margin: 40px;
+    margin-top: -19px;
+    margin-right:-100px; 
+    margin-left: 9px;
+}
+
+
+
+.Laureo{
+    margin-right: auto;
+    margin-top: -470px;
+    display: block;
+}
+
+.enorme{
+    margin-left: 400px;
+    margin-top: -230px;
+    border-radius: 90px;
+}
+
+
+.un{
+    display: block;
+    padding-top: 200px;
+    font-size: 30px;
+    margin-left: 90px;
+    font-style: italic;
+}
+
+.ofrece{
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 300px;
+    margin-left: 500px;
+    border-radius: 6px
+}
+
+#MuchisimosJefes{
+    width:620px;
+    margin-left: 20px;
+}
+
+#muchisimosjefes2{
+    width: 619px;
+    position: absolute;
+    margin-left: 55px;
+}
+
+#weapons{
+    margin-left: 170px;
+}
+
+li{
+    color: #d4af37;
+}
+
+h1{
+    color: #d4af37;
+    font-family: kurale;
+}
+
+h2{
+    color: #d4af37;
+    text-decoration: underline;
+}
+
+h3{
+    color: #d4af37;
+    text-decoration: underline;
+}
+
+h4{
+    color: #d4af37;
+    text-decoration: underline;
+}

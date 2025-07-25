@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--meta que permite que los diseños puedan adaptarse a otros dispositivos-->
+    <meta name="description" content="pagina dedicada a saber las opiniones de los usuarios"><!--este meta permite añadir una descripccion a la pagina -->
+    <meta name="keywords" content="mejorar, formulario, contenido"><!--meta enfocado a las palabras claves de la pagina util para el SEO-->
+    <meta name="author" content="Estevam"><!--meta que indica el nombre del autor-->
+    <meta property="og:title" content="Formulario sobre pagina de margit"><!--las metas OG permite modificar como se vera la pagina en redes sociales en este caso es el titulo-->
+    <meta property="og:description" content="aqui puedes expresarte sobre que se puede mejorar en nuestra pagina"> 
+    <link rel="icon" href="../../Imagenes/icono.png" type="image/png"><!--property se debe de poner en lugar de name cuando son metas del grupo og -->
+    <link rel="stylesheet" href="../../Estilos-paginas/Estilos-jefesRecomendados/Style-pagOfTheBoses/form-style-margit.css">
+    <title>Form of margit</title>
+</head>
+<body>
+    
+    <div id="grid-layout">
+        <nav id="nav-menu">
+            <h2>MENU</h2>
+            <div class="items-nav" ><a class="nav-links" title="Link para volver a pagina de marggit" rel="noreferrer noopener" href="Margit-pag.html">Volver a pagina de margit</a>
+                <img class="nav-img" loading="lazy" src="../../Imagenes/imagenes-jefes-individuales/volvermargit.jpg" title="Link para regresar a pagina sobre margit" aria-label="Oprima el link inferior para volver a la pagina de margit" alt="Volver a pagina sobre margit"></div>
+            <div class="items-nav" ><a class="nav-links" href="../../JefesClaves.html">Volver a seleccionar jefes</a>
+                <img class="nav-img" loading="lazy" src="../../Imagenes/jefes.jpg" alt="volver a seleccionar jefes"></div>
+            <div class="items-nav" ><a class="nav-links" href="../../index.html">volver a pagina principal</a>
+                <img class="nav-img" loading="lazy" alt="volver a pagina principal de elden ring" src="../../Imagenes/imagenes-jefes-individuales/elden-ring-regresar.jpg"></div> <!--loading lazy sirve para que las imagenes cargen hasta que el usuario se posicione en la parte donde esta la imagen que tiene este atributo-->
+        </nav>
+
+        <main>
+            <form id="formulario-margit">
+                <fieldset class="fieldset-class">
+                    <legend class="Legend-class">Nombre del usuario</legend>
+                        <label class="label-class" for="nombre">Introduzca su nombre</label>
+                            <input type="text" id="nombre" class="Imputs-class" placeholder="ingresa tu nombre de usuario">
+                                <button class="buttom-class" type="submit">enviar</button>
+                </fieldset>
+
+                <fieldset class="fieldset-class" >
+                    <Legend class="Legend-class" >Mejoras de la pagina</Legend>
+                        <label class="label-class"  for="Options-upgrade">seleccione la mejora
+                            <select id="Options-upgrade">
+                                <option class="Imputs-class" value="es">Mas accesibilidad</option>
+                                <option class="Imputs-class" value="es">mas informacion</option>
+                                <option class="Imputs-class" value="es">Mejores descripcciones</option>
+                                <option class="Imputs-class" value="es">datos claves</option>
+                                <option class="Imputs-class" value="es">Mejores ilustraciones</option>
+                            </select>
+                            <button class="buttom-class" type="submit">Enviar</button>
+                            <textarea placeholder="Escribe una descripccion sobre la mejora"></textarea>
+                        </label>
+                        <hr>
+                        <label class="label-class" for="Contenido-paraAgregar"> !Queremos escucharte¡
+                            <details id="Contenido-paraAgregar"> <!--details funciona como un menu desplegable nativo
+                                este debe de ir acompañado de summary que funciona como el titulo de este-->
+                                <summary>¿que contenido te gustaria que fuera agregado?, !Dejanos saber aqui abajo¡➡️</summary>
+                                <h3 class="details-items" >Mas jefes</h3>
+                                <h3 class="details-items" >Cosas sobre elden ring Nightring</h3>
+                                <h3 class="details-items" >Mas secciones en la pagina</h3>
+                                <h3 class="details-items" >Equipo para cada uno de los jefes</h3>
+                            </details>
+                        </label>
+                </fieldset>
+
+                <fieldset class="fieldset-class" >
+                    <legend class="Legend-class" >seleccione su opcion</legend>
+                        <label class="label-class" for="">escriba su opción de preferencia
+                            <input form="enviarjeje" list="details-options">
+                        </label>
+                        
+                                <datalist id="details-options"> <!--datalist sirve para que al usuario le salgan palabras claves, pero sin embargo para que esto funcione esta data list se debe de enlazar a un input con el atributo list (en el input) y un id asignado al datalist-->
+                                    <option value="Mas jefes">
+                                    <option value="Cosas sobre elden ring Nightring">
+                                    <option value="Mas secciones en la pagina">
+                                    <option value="Equipo para cada uno de los jefes">
+                                </datalist>
+                                <button id="enviarjeje" type="submit">Enviar</button>
+                </fieldset>
+                
+            </form>
+        </main>
+
+    </div>
+
+</body>
+</html>

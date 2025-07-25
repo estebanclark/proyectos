@@ -1,0 +1,196 @@
+@font-face {
+    font-family: "ringfont";
+    src: url("../fontring/Mantinia-Regular.ttf" ) format("truetype");
+}
+
+body{
+    margin: 0;
+    width: 0;
+    padding: 0;
+}
+
+
+#section-principal{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    width: calc(100vw - 17px); /**permite que el 100vw ocupe todo el viewpord respando los px de la barra de scroll que se genera al hacer esto**/
+    height: 50vw;
+    background-color: blue;
+    box-sizing: border-box;
+    background-image: url("../../Imagenes/imagendefondo.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: 20% 0;
+}
+
+#head{
+    display: flex;
+    align-items: baseline;
+    height: 4em;
+    background: linear-gradient(to bottom, #000 ,transparent);
+    grid-column: 1/11;
+    grid-row: 1;
+    padding: 5px;
+    font-size: 23px;
+}
+
+.Head-items{
+    margin: 1.4em;
+    color: white;
+    font-size: 1em;
+    font-family: ringfont;
+    text-shadow: 1px 1px #000;
+    background-color: #0003;
+    color: #dfbe24;
+    padding: 4px;
+    border-radius: 4px;
+    border-left: 5px solid #002;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px 0px rgb(255, 255, 255);
+}
+
+.head-links{
+    color: #dfbe24;
+    text-decoration: none;
+    cursor:alias;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.head-links:hover{
+    transform: translateY(20%);
+    text-decoration: underline;
+    box-shadow: 0 0 10px 5px rgb(255, 255, 255);
+}
+
+#collage-bosses{
+    display: flex;
+    background-color: #000a;
+    width: 80vw;
+    height: 10em;
+    grid-column: 5;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#collage-bosses2{
+    display: flex;
+    background-color: #000a;
+    width: 80vw;
+    height: 10em;
+    grid-column: 5;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+.boss-img{
+    height: 7em;
+    width: 24em;
+    margin: 1em;
+    margin-top: 2em;
+    background-color: #dfbe24;
+    padding: 6px;
+    font-family: ringfont;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px 0 #fff;
+    text-decoration: none;
+    filter: brightness(10%);
+    backdrop-filter: blur(10px);
+    transition: 0.4s ease;
+    
+}
+
+.boss-img:hover{
+    transform: translateY(-11px);
+    filter: brightness(100%);
+    box-shadow: 0 0 15px 0 #fff;
+    cursor:pointer;
+}
+
+.Style-nameBoses{
+    background: linear-gradient(to right, #0005, transparent);
+    color: #dfbe24;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: bolder;
+    letter-spacing: 3px;
+    border-radius: 5px;
+}
+
+
+
+main{
+    padding: 0;
+    margin: 0;
+    margin-top: 4em;
+    grid-column: 5;
+}
+
+/**Seccion de img bacgrounds de los jefes**/
+
+#MARGIT-IMG{
+    background-image: url("../../Imagenes/Imagenes-Jefes/Margit-imagen.jpg");
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: cover;
+}
+
+#GODRICK-IMG{
+    background-image: url("../../Imagenes/Imagenes-Jefes/godrick-imagen.jpg");
+    background-size: 200px;
+    background-size: cover;
+}
+
+#ELDEN-BEAST-IMG{
+    background-image: url("../../Imagenes/Imagenes-Jefes/BestiaDeElden-imagen.jpg");
+    background-size: 200px;
+}
+
+#RELLANA-IMG{
+    background-image: url("../../Imagenes/Imagenes-Jefes/Rellana-imagen.jpg");
+    background-size: 200px;
+}
+
+#GODFREY-IMG{
+    background-image: url("../../Imagenes/Imagenes-Jefes/godfrey-imagen.jpg");
+    background-size: 200px;
+}
+
+#MORGOTT-IMG{
+    background-image: url("../../Imagenes/Imagenes-Jefes/morgott-imagen.jpg");
+    background-size: 200px;
+}
+
+#GIGANTE-IMG{
+    background-image:url("../../Imagenes/Imagenes-Jefes/Gigante_de_fuego-imagen.jpg");
+    background-size: 200px;
+    background-size: cover;
+}
+
+#MALIKETH-IMG{
+    background-image: url("../../Imagenes/Imagenes-Jefes/maliketh-imagen.jpg");
+    background-size: 200px;
+    background-size: cover;
+}
+
+#RAHAHM-IMG{
+    background-image: url("../../Imagenes/Imagenes-Jefes/Radahn-imagen.jpg");
+    background-size: 200px;
+    background-size: cover;
+    background-position: left center;
+}
+
+#RADAGOHN-IMG{
+    background-image: url("../../Imagenes/Imagenes-Jefes/radagohn-IMAGEN.jpg");
+    background-size: 200px;
+    background-size: cover;
+}
+
+/**Fin de la sección**/
